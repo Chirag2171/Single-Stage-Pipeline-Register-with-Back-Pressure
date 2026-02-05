@@ -29,4 +29,25 @@ out_ready ─────►│             │
 - ✔ Active-LOW reset  
 - ✔ Fully synthesizable SystemVerilog RTL  
 - ✔ Clean and simple design  
-- ✔ Simulation verified  
+- ✔ Simulation verified
+- 
+Interface Description
+input_valid / input_ready : Upstream handshake
+out_valid / out_ready : Downstream handshake
+Inputs
+clk – System clock
+
+reset_n – Active-low reset
+
+input_data [DATA_WIDTH-1:0] – Input data
+
+input_valid – Indicates valid input data
+
+out_ready – Downstream ready signal
+
+Outputs
+input_ready – Pipeline ready to accept data
+
+out_data [DATA_WIDTH-1:0] – Stored output data
+
+out_valid – Indicates valid output data Data is accepted only when both input_valid and input_ready are high.

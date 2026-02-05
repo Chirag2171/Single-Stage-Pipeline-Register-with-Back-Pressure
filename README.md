@@ -67,8 +67,14 @@ This design uses the valid–ready handshake protocol, which is widely used in m
 ## 📊 Simulation Result
 
 Simulation waveform verifies:
-<img width="1387" height="688" alt="image" src="https://github.com/user-attachments/assets/281a753b-38bf-4ee1-b1aa-001af4244eec" />
-<img width="1387" height="688" alt="image" src="https://github.com/user-attachments/assets/281a753b-38bf-4ee1-b1aa-001af4244eec" />
+<img width="779" height="416" alt="Screenshot 2026-02-06 003923" src="https://github.com/user-attachments/assets/3cff26aa-150d-4314-9605-5167603bdcac" />
+<img width="779" height="416" alt="Screenshot 2026-02-06 003923" src="https://github.com/user-attachments/assets/3cff26aa-150d-4314-9605-5167603bdcac" />
+
+
+# RTL ANALYSIS
+
+<img width="752" height="385" alt="Screenshot 2026-02-05 233257" src="https://github.com/user-attachments/assets/d14b173c-e891-44a9-9caa-f08258b54500" />
+
 
 - ✔ Correct data transfer  
 - ✔ Data retention during stall  

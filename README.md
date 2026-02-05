@@ -66,7 +66,8 @@ This design uses the valid–ready handshake protocol, which is widely used in m
 
 ## 📊 Simulation Result
 
-Simulation waveform verifies:
+# Simulation waveform verifies:
+
 <img width="779" height="416" alt="Screenshot 2026-02-06 003923" src="https://github.com/user-attachments/assets/3cff26aa-150d-4314-9605-5167603bdcac" />
 
 - ✔ Correct data transfer  
@@ -78,9 +79,11 @@ Simulation waveform verifies:
 <img width="752" height="385" alt="Screenshot 2026-02-05 233257" src="https://github.com/user-attachments/assets/d14b173c-e891-44a9-9caa-f08258b54500" />
 
 # Technology Schematic
+
 <img width="753" height="385" alt="Screenshot 2026-02-05 233022" src="https://github.com/user-attachments/assets/d1109de2-259c-4e06-adf2-ac2a21d06883" />
 
 # Implemented Design (Placed & Routed Circuit)
+
 <img width="754" height="383" alt="Screenshot 2026-02-05 233059" src="https://github.com/user-attachments/assets/ead682cc-fb17-494a-ba96-cfe0b4471666" />
 
 ---
@@ -89,13 +92,3 @@ Simulation waveform verifies:
 
 
 ---
-
-## ▶ How to Run Simulation (ModelSim / Questa)
-
-```bash
-vlib work
-vlog rtl/single_stage_pipeline_reg.sv
-vlog tb/tb_single_stage_pipeline_reg.sv
-vsim tb_single_stage_pipeline_reg
-run -all
-

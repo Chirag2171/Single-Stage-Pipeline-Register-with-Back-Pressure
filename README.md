@@ -51,3 +51,61 @@ input_ready – Pipeline ready to accept data
 out_data [DATA_WIDTH-1:0] – Stored output data
 
 out_valid – Indicates valid output data Data is accepted only when both input_valid and input_ready are high.
+
+---
+
+## ✨ Features
+
+- ✔ Single-stage pipeline buffer  
+- ✔ Valid–Ready handshake protocol  
+- ✔ Back-pressure support  
+- ✔ No data loss or overwrite  
+- ✔ Active-LOW reset  
+- ✔ Fully synthesizable SystemVerilog RTL  
+- ✔ Clean and simple design  
+- ✔ Simulation verified  
+
+---
+
+## 🔌 Interface Description
+
+### Handshake Signals
+- `in_valid / in_ready` → Upstream handshake  
+- `out_valid / out_ready` → Downstream handshake  
+
+---
+
+### Inputs
+
+| Signal | Description |
+|--------|-------------|
+| `clk` | System clock |
+| `reset_n` | Active-low reset |
+| `in_data [DATA_WIDTH-1:0]` | Input data |
+| `in_valid` | Indicates valid input data |
+| `out_ready` | Downstream ready signal |
+
+---
+
+### Outputs
+
+| Signal | Description |
+|--------|-------------|
+| `in_ready` | Pipeline ready to accept data |
+| `out_data [DATA_WIDTH-1:0]` | Stored output data |
+| `out_valid` | Indicates valid output data |
+
+---
+
+## 🔄 Working Principle
+
+- Data is accepted **only when both** `in_valid = 1` and `in_ready = 1`
+- Data is transferred **only when both** `out_valid = 1` and `out_ready = 1`
+- If `out_ready = 0`, the pipeline **holds the data** (Back-pressure)
+- During stall, `in_ready` goes LOW to **prevent overwrite**
+- When `out_ready` becomes HIGH, stored data is released
+
+---
+
+## ⚙️ Core Logic
+

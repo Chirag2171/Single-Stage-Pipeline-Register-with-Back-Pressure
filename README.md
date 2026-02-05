@@ -4,14 +4,7 @@ Single Stage Pipeline Register (Valid–Ready Handshake)
 # Introduction
 A single-stage pipeline register is a basic building block used in digital pipelines to temporarily store data between two stages. It improves data flow control and prevents data loss when the next stage is slow or busy.
 This design uses the valid–ready handshake protocol, which is widely used in modern interfaces such as AXI-Stream.
-# Block Diagram
-    ┌───────────────┐
-    │               │
-in_data ──► │
-in_valid ─► PIPELINE REG │──► out_data
-in_ready ◄─ │◄── out_ready
-│ │
-└───────────────┘
+
 ## ✨ Features
 
 - ✔ Single-stage pipeline buffer  
@@ -22,27 +15,6 @@ in_ready ◄─ │◄── out_ready
 - ✔ Fully synthesizable SystemVerilog RTL  
 - ✔ Clean and simple design  
 - ✔ Simulation verified
-- 
-Interface Description
-input_valid / input_ready : Upstream handshake
-out_valid / out_ready : Downstream handshake
-Inputs
-clk – System clock
-
-reset_n – Active-low reset
-
-input_data [DATA_WIDTH-1:0] – Input data
-
-input_valid – Indicates valid input data
-
-out_ready – Downstream ready signal
-
-Outputs
-input_ready – Pipeline ready to accept data
-
-out_data [DATA_WIDTH-1:0] – Stored output data
-
-out_valid – Indicates valid output data Data is accepted only when both input_valid and input_ready are high.
 
 ---
 
@@ -100,4 +72,31 @@ out_valid – Indicates valid output data Data is accepted only when both input_
 ---
 
 ## ⚙️ Core Logic
+
+---
+
+## 📊 Simulation Result
+
+Simulation waveform verifies:
+
+- ✔ Correct data transfer  
+- ✔ Data retention during stall  
+- ✔ Proper back-pressure behavior  
+- ✔ No data loss or corruption  
+
+---
+
+## 📁 Project Structure
+
+
+---
+
+## ▶ How to Run Simulation (ModelSim / Questa)
+
+```bash
+vlib work
+vlog rtl/single_stage_pipeline_reg.sv
+vlog tb/tb_single_stage_pipeline_reg.sv
+vsim tb_single_stage_pipeline_reg
+run -all
 

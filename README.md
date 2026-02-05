@@ -4,3 +4,19 @@ Single Stage Pipeline Register (Valid–Ready Handshake)
 # Introduction
 A single-stage pipeline register is a basic building block used in digital pipelines to temporarily store data between two stages. It improves data flow control and prevents data loss when the next stage is slow or busy.
 This design uses the valid–ready handshake protocol, which is widely used in modern interfaces such as AXI-Stream.
+# Block Diagram
+        ┌───────────────┐
+        │               │
+in_data ──►               │
+in_valid ─►  PIPELINE REG │──► out_data
+in_ready ◄─               │◄── out_ready
+        │               │
+        └───────────────┘
+Inside the Pipeline Register
+                ┌─────────────┐
+in_data  ──────►│   reg_data  │──────► out_data
+                │             │
+in_valid ──────►│             │
+                │   reg_valid │──────► out_valid
+out_ready ─────►│             │
+                └─────────────┘

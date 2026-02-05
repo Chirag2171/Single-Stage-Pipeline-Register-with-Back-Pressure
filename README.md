@@ -20,3 +20,13 @@ in_valid ──────►│             │
                 │   reg_valid │──────► out_valid
 out_ready ─────►│             │
                 └─────────────┘
+## ✨ Features
+
+- ✔ Single-stage pipeline buffer  
+- ✔ Valid–Ready handshake protocol  
+- ✔ Back-pressure support  
+- ✔ No data loss or overwrite  
+- ✔ Active-LOW reset  
+- ✔ Fully synthesizable SystemVerilog RTL  
+- ✔ Clean and simple design  
+- ✔ Simulation verified  
